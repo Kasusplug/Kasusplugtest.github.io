@@ -89,13 +89,13 @@
         <input type="text" placeholder="Name" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Phone number" id="user_phone">
-        <button type="button" id="order">Order</button>
+        <button type="button" id="Order">Order</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("Buy");
-        let order = document.getElementById("order");
+        let order = document.getElementById("Order");
 
         buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
