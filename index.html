@@ -100,26 +100,31 @@
         tg.expand();
 
         Buy.addEventListener("click", () => {
+            console.log("Buy button clicked");
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
             document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
         });
 
-        Brder.addEventListener("click", () => {
+        Order.addEventListener("click", () => {
+            console.log("Order button clicked");
             document.getElementById("error").innerText = '';
             let name = document.getElementById("user_name").value;
             let email = document.getElementById("user_email").value;
             let phone = document.getElementById("user_phone").value;
-            if(name.length < 5) {
+            if (name.length < 5) {
                 document.getElementById("error").innerText = "Error in name";
+                console.log("Error in name");
                 return;
             }
-            if(email.length < 5) {
+            if (email.length < 5) {
                 document.getElementById("error").innerText = "Error in email";
+                console.log("Error in email");
                 return;
             }
-            if(phone.length < 5) {
-                document.getElementById("error").innerText = "Error in phone num";
+            if (phone.length < 5) {
+                document.getElementById("error").innerText = "Error in phone number";
+                console.log("Error in phone number");
                 return;
             }
 
@@ -128,6 +133,7 @@
                 email: email,
                 phone: phone
             };
+            console.log("Sending data:", data);
             tg.sendData(JSON.stringify(data));
             tg.close();
         });
